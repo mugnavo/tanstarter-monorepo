@@ -9,6 +9,9 @@ allowBuilds:
 # https://pnpm.io/supply-chain-security#delay-dependency-updates
 minimumReleaseAge: 1440
 
+# Save exact versions to package.json instead of broad ranges
+savePrefix: ""
+
 catalog:
   "@babel/core": 8.0.1
   "@base-ui/react": 1.6.0
@@ -19,13 +22,13 @@ catalog:
   "@tailwindcss/vite": 4.3.3
   "@tanstack/devtools-a11y": 0.1.6
   "@tanstack/devtools-vite": 0.8.1
-  "@tanstack/eslint-plugin-query": 5.101.3
+  "@tanstack/eslint-plugin-query": 5.101.4
   "@tanstack/eslint-plugin-router": 1.162.0
   "@tanstack/react-devtools": 0.10.8
   "@tanstack/react-form-devtools": 0.2.31
   "@tanstack/react-form": 1.33.2
-  "@tanstack/react-query": 5.101.3
-  "@tanstack/react-query-devtools": 5.101.3
+  "@tanstack/react-query": 5.101.4
+  "@tanstack/react-query-devtools": 5.101.4
   "@tanstack/react-router": 1.170.18
   "@tanstack/react-router-devtools": 1.167.0
   "@tanstack/react-router-ssr-query": 1.167.1
@@ -48,8 +51,8 @@ catalog:
   nanoid: 6.0.0
   nitro: 3.0.260610-beta
   postgres: 3.4.9
-  react: 19.2.7
-  react-dom: 19.2.7
+  react: 19.2.8
+  react-dom: 19.2.8
   shadcn: 4.13.1
   sonner: 2.0.7
   tailwindcss: 4.3.3
