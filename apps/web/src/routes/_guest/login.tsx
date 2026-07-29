@@ -3,10 +3,10 @@ import { authClient } from "@repo/auth/auth-client";
 import { Button } from "@repo/ui/components/button";
 import { Input } from "@repo/ui/components/input";
 import { Label } from "@repo/ui/components/label";
+import { toast } from "@repo/ui/components/toast";
 import { useMutation } from "@tanstack/react-query";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { GalleryVerticalEndIcon, LoaderCircleIcon } from "lucide-react";
-import { toast } from "sonner";
 
 import { SignInSocialButton } from "#/components/sign-in-social-button";
 
@@ -26,7 +26,10 @@ function LoginForm() {
         },
         {
           onError: ({ error }) => {
-            toast.error(error.message || "An error occurred while signing in.");
+            toast.add({
+              type: "error",
+              description: error.message || "An error occurred while signing in.",
+            });
           },
           // better-auth seems to trigger a hard navigation on login,
           // so we don't have to revalidate & navigate ourselves
