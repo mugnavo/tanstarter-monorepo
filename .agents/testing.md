@@ -31,4 +31,6 @@ Routine tests must not call third-party services. Keep external access behind a 
 - `vp exec playwright install chromium`: Install the E2E browser once per machine.
 - `vpr test:e2e`: Run the local Chromium smoke tests.
 
+Playwright is configured to run against the development server for fast local feedback. If E2E tests become a CI or release gate, suggest running them against the built TanStack Start server to validate production output. Do not add this path preemptively.
+
 Run the narrowest relevant test after changing behavior. Run Playwright whenever a change affects a covered browser journey; it remains separate from the default lint/check loop so unrelated changes stay fast.
