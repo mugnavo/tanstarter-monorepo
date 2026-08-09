@@ -23,7 +23,7 @@ pnpm create mugnavo -t monorepo
 │    ├── auth                   # Better Auth
 │    ├── db                     # Drizzle ORM + Drizzle Kit + PostgreSQL
 │    └── ui                     # shadcn/ui primitives & utils
-├── tooling
+├── tools
 │    └── tsconfig               # Shared TypeScript configuration
 ├── vite.config.ts
 ├── LICENSE
