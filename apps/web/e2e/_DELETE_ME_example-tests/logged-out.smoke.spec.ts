@@ -1,18 +1,10 @@
 import { expect, test } from "@playwright/test";
 
-const LOCAL_APP_HOSTNAMES = new Set(["localhost", "127.0.0.1"]);
+const NON_LOCAL_HTTP_URL = /^https?:\/\/(?!(?:localhost|127\.0\.0\.1|\[::1\])(?::\d+)?(?:[/?#]|$))/;
 
 test.beforeEach(async ({ context }) => {
-  await context.route("**/*", async (route) => {
-    const { hostname } = new URL(route.request().url());
-
-    if (LOCAL_APP_HOSTNAMES.has(hostname)) {
-      await route.continue();
-      return;
-    }
-
-    await route.abort("blockedbyclient");
-  });
+  // Leave local Vite module requests untouched so dependency optimization can settle normally.
+  await context.route(NON_LOCAL_HTTP_URL, (route) => route.abort("blockedbyclient"));
 });
 
 test("a logged-out visitor can reach the login form", async ({ page }) => {
