@@ -16,6 +16,12 @@ export default defineConfig({
     },
   },
 
+  // Vitest (via Vite+) - https://viteplus.dev/guide/test
+  test: {
+    include: ["{apps,packages,tooling}/**/*.test.{ts,tsx}"],
+    passWithNoTests: true,
+  },
+
   // Oxfmt - https://oxc.rs/docs/guide/usage/formatter/config.html
   fmt: {
     tabWidth: 2,

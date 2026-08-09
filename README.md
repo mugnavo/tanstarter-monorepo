@@ -37,6 +37,7 @@ pnpm create mugnavo -t monorepo
 - [Issue watchlist](#issue-watchlist)
 - [Goodies](#goodies)
   - [Git hooks](#git-hooks)
+  - [Testing](#testing)
   - [Scripts](#scripts)
   - [Utilities](#utilities)
 - [Ecosystem](#ecosystem)
@@ -123,6 +124,10 @@ Check the root [package.json](./package.json) and each workspace package's `pack
 
 - [`/auth/src/tanstack/middleware.ts`](./packages/auth/src/tanstack/middleware.ts) - Sample middleware for enforcing authentication on server functions & API routes.
 - [`/web/src/components/theme-toggle.tsx`](./apps/web/src/components/theme-toggle.tsx), [`/ui/lib/theme-provider.tsx`](./packages/ui/lib/theme-provider.tsx) - A theme toggle and provider for toggling between light and dark mode.
+
+#### Testing
+
+The [testing foundation](./.agents/testing.md) uses Vitest and Playwright and is intentionally lightweight. For short-lived prototypes, it can be safely ignored or removed.
 
 ## License
 

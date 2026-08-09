@@ -6,13 +6,26 @@
 - Prefer shared `@repo/ui` components; add primitives via shadcn CLI (`vpr ui add <component>`).
 - Use `lucide-react` for UI icons (use `Icon` suffix, e.g. `import { Loader2Icon } from "lucide-react"`); for brand icons use `@icons-pack/react-simple-icons` (e.g. `SiGithub`).
 - Use shared pnpm catalog versions (`pnpm-workspace.yaml`) via `catalog:`.
-- Don't build after every little change. If `vpr lint` passes; assume changes work.
+- Don't build after every little change. Use `vpr lint` as the baseline and run the narrowest relevant tests described in the testing guidelines.
 - For running scripts, use `vpr`, which is a shorthand for `vp run`.
+
+# Code style
+
+- Do not introduce abstractions, generic utilities, or extensibility without a concrete need.
+- Avoid unnecessary indirection and wrapper layers that only rename or forward calls.
+- Prefer cohesive, readable functions over excessive fragmentation; extract helpers when they meaningfully improve readability, reuse, or testability.
+- Keep types simple and close to where they are used. Prefer inference and avoid type gymnastics unless necessary.
+- Follow existing abstractions; do not add new architectural layers without a concrete need.
+- Minimize indirection: keep the main control flow easy to follow without unnecessary jumps across too many files/functions.
+- Be robust at system boundaries such as user input, auth, external APIs, and persistence; avoid redundant defensive code where internal invariants are already enforced.
+- Do not sacrifice security, correctness, or meaningful edge-case handling for brevity.
+- Add concise comments only for non-obvious intent, unusual edge cases, and important constraints. Briefly explain why, not what.
 
 ## Topic-specific Guidelines
 
 - [TanStack patterns](.agents/tanstack-patterns.md) - Routing, data fetching/mutations, loaders, server functions, environment shaking. For TanStack Query, Router, and Start
 - [Auth patterns](.agents/auth.md) - Route guards, middleware, auth utilities
+- [Testing](.agents/testing.md) - What to test, Vitest/Playwright boundaries, commands
 - [TypeScript conventions](.agents/typescript.md) - Casting rules, prefer type inference
 - [Workflow](.agents/workflow.md) - Workflow commands, validation approach
 
