@@ -7,7 +7,7 @@ allowBuilds:
 
 # https://pnpm.io/settings#minimumreleaseage
 # https://pnpm.io/supply-chain-security#delay-dependency-updates
-minimumReleaseAge: 0
+minimumReleaseAge: 1440
 
 # Save exact versions to package.json instead of broad ranges
 savePrefix: ""
@@ -21,13 +21,13 @@ catalog:
   "@playwright/test": 1.62.1
   "@rolldown/plugin-babel": 0.2.3
   "@tailwindcss/vite": 4.3.3
-  "@tanstack/devtools-a11y": 0.1.6
+  "@tanstack/devtools-a11y": 0.2.0
   "@tanstack/devtools-vite": 0.8.3
   "@tanstack/eslint-plugin-query": 5.101.4
   "@tanstack/eslint-plugin-router": 1.162.0
-  "@tanstack/react-devtools": 0.10.9
-  "@tanstack/react-form-devtools": 0.2.33
-  "@tanstack/react-form": 1.33.4
+  "@tanstack/react-devtools": 0.10.10
+  "@tanstack/react-form-devtools": 0.2.34
+  "@tanstack/react-form": 1.33.5
   "@tanstack/react-query": 5.101.4
   "@tanstack/react-query-devtools": 5.101.4
   "@tanstack/react-router": 1.170.25
