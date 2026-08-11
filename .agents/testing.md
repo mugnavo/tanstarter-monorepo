@@ -25,12 +25,12 @@ Routine tests must not call third-party services. Keep external access behind a 
 ## Conventions and Commands
 
 - Colocate Node tests as `*.test.ts` or `*.test.tsx`. Import test APIs from `vite-plus/test`.
-- Put browser tests in `apps/web/e2e/**/*.spec.ts`.
+- Keep Playwright tests, config, and dependency with each browser app (for example, `apps/web/e2e/**/*.spec.ts`).
 - `vp test`: Run Node tests once.
 - `vp test watch`: Run Node tests in watch mode.
 - `vp exec playwright install chromium`: Install the E2E browser once per machine.
-- `vpr test:e2e`: Run the local Chromium smoke tests.
+- `vpr test:e2e`: Build each browser app and run its E2E suite against the built production server.
 
-Playwright is configured to run against the development server for fast local feedback. If E2E tests become a CI or release gate, suggest running them against the built TanStack Start server to validate production output. Do not add this path preemptively.
+Playwright must exercise built production output so the E2E path validates the deployable artifact, including production bundling and server/client boundaries. Each app's Playwright configuration owns its build and server lifecycle; do not run a separate build first or reuse a development server. Use a targeted Playwright spec when iterating if the full E2E suite becomes slow.
 
 Run the narrowest relevant test after changing behavior. Run Playwright whenever a change affects a covered browser journey; it remains separate from the default lint/check loop so unrelated changes stay fast.

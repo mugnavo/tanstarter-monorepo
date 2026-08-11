@@ -6,6 +6,7 @@
     "dev": "vp dev",
     "preview": "vp preview",
     "start": "node .output/server/index.mjs",
+    "test:e2e": "playwright test --pass-with-no-tests",
     "ui": "vpx shadcn@latest"
   },
   "dependencies": {
@@ -30,6 +31,7 @@
   },
   "devDependencies": {
     "@babel/core": "catalog:",
+    "@playwright/test": "catalog:",
     "@repo/tsconfig": "workspace:*",
     "@rolldown/plugin-babel": "catalog:",
     "@tailwindcss/vite": "catalog:",

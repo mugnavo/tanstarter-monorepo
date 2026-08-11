@@ -9,7 +9,7 @@
     "dev:web": "vp run --filter=@repo/web dev",
     "lint": "vp lint --type-aware --type-check",
     "lint:fix": "vp lint --type-aware --type-check --fix",
-    "test:e2e": "playwright test --pass-with-no-tests",
+    "test:e2e": "vp run --recursive test:e2e",
     "format": "vp fmt",
     "format:check": "vp fmt --check",
     "check": "vp check",
@@ -27,7 +27,6 @@
     "intent": "vpx @tanstack/intent@latest"
   },
   "devDependencies": {
-    "@playwright/test": "catalog:",
     "@tanstack/eslint-plugin-query": "catalog:",
     "@tanstack/eslint-plugin-router": "catalog:",
     "vite-plus": "catalog:"
@@ -36,5 +35,10 @@
     "node": ">=24"
   },
   "packageManager": "pnpm@11.21.0",
-  "generator": "create-mugnavo"
+  "generator": "create-mugnavo",
+  "intent": {
+    "skills": [
+      "@tanstack/*"
+    ]
+  }
 }

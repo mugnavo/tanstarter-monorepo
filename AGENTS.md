@@ -6,7 +6,7 @@
 - Prefer shared `@repo/ui` components; add primitives via shadcn CLI (`vpr ui add <component>`).
 - Use `lucide-react` for UI icons (use `Icon` suffix, e.g. `import { Loader2Icon } from "lucide-react"`); for brand icons use `@icons-pack/react-simple-icons` (e.g. `SiGithub`).
 - Use shared pnpm catalog versions (`pnpm-workspace.yaml`) via `catalog:`.
-- Don't build after every little change. Use `vpr lint` as the baseline and run the narrowest relevant tests described in the testing guidelines.
+- Don't run a standalone build after every little change. Use `vpr lint` as the baseline and run the narrowest relevant tests described in the testing guidelines; `vpr test:e2e` performs its own production build.
 - For running scripts, use `vpr`, which is a shorthand for `vp run`.
 
 # Code style
