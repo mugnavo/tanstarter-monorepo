@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vp dev",
     "preview": "vp preview",
-    "start": "node .output/server/index.mjs",
+    "start": "node --env-file-if-exists=.env .output/server/index.mjs",
+    "start:e2e": "node --env-file-if-exists=.env.e2e .output/server/index.mjs",
     "test:e2e": "playwright test --pass-with-no-tests",
     "ui": "vpx shadcn@latest"
   },
