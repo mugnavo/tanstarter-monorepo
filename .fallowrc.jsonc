@@ -3,7 +3,7 @@
   "$schema": "https://raw.githubusercontent.com/fallow-rs/fallow/main/schema.json",
   "entry": ["apps/web/src/router.tsx", "scripts/*.ts"],
   "workspaces": {
-    "packages": ["apps/*", "packages/*", "tooling/*"],
+    "packages": ["apps/*", "packages/*", "tools/*"],
   },
   "ignorePatterns": ["**/*.generated.ts", "**/*.d.ts", "**/*.gen.*"],
   "ignoreDependencies": [

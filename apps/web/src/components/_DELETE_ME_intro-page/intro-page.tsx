@@ -4,18 +4,27 @@ import { Button } from "@repo/ui/components/button";
 import { toast } from "@repo/ui/components/toast";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "@tanstack/react-router";
-import { CheckIcon, CopyIcon, ExternalLinkIcon, StarIcon, TerminalIcon } from "lucide-react";
+import {
+  CheckIcon,
+  ChevronDownIcon,
+  CopyIcon,
+  ExternalLinkIcon,
+  StarIcon,
+  TerminalIcon,
+} from "lucide-react";
 import { Suspense } from "react";
 import { useState } from "react";
 
 import { SignOutButton } from "#/components/sign-out-button";
 import { ThemeToggle } from "#/components/theme-toggle";
 
+import { formatGitHubStars } from "./format-github-stars";
+
 /**
- * This is the intro component for TanStarter, which you may delete after creating the project.
+ * This starter intro lives in a delete-me folder with its helper and unit test.
  * Have fun!
  */
-export function IntroPageDeleteMe() {
+export function IntroPage() {
   const [isCopied, setIsCopied] = useState(false);
 
   const repoUrl = "https://github.com/mugnavo/tanstarter-monorepo";
@@ -134,17 +143,7 @@ export function IntroPageDeleteMe() {
         ))}
       </section>
 
-      <section className="mx-auto mb-16 hidden max-w-[65ch] space-y-3 bg-card/50 p-4 text-sm text-foreground/80 sm:block">
-        <p>
-          You may delete this component at{" "}
-          <span className="rounded-md border border-border bg-card px-1 py-1.5 font-mono">
-            components/_DELETE_ME_intro_page.tsx
-          </span>{" "}
-          after creating your project.
-        </p>
-
-        <p>Happy coding!</p>
-      </section>
+      <TemplateSetupGuide />
 
       <footer className="flex flex-col items-center justify-between gap-6 text-sm md:flex-row">
         <a
@@ -224,6 +223,54 @@ function Feature({ title, desc }: { title: string; desc: string }) {
   );
 }
 
+function TemplateSetupGuide() {
+  return (
+    <details className="group mx-auto mb-16 max-w-[65ch] overflow-hidden rounded-xl border border-border bg-card/50 text-sm text-foreground/80">
+      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-4 select-none [&::-webkit-details-marker]:hidden">
+        <span>
+          <span className="block font-medium text-foreground">
+            Just created a project from this template?
+          </span>
+          <span className="mt-1 block text-muted-foreground">
+            Expand for the starter cleanup checklist.
+          </span>
+        </span>
+        <ChevronDownIcon className="size-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-180" />
+      </summary>
+
+      <div className="border-t border-border px-4 py-4">
+        <ol className="list-decimal space-y-3 pl-5">
+          <li>
+            Delete{" "}
+            <code className="rounded-md border border-border bg-card px-1 py-0.5">
+              apps/web/src/components/_DELETE_ME_intro-page/
+            </code>
+            , which contains this page, its helper, and the example unit test.
+          </li>
+          <li>
+            Delete{" "}
+            <code className="rounded-md border border-border bg-card px-1 py-0.5">
+              apps/web/e2e/_DELETE_ME_example-tests/
+            </code>
+            . The Playwright config needs no change.
+          </li>
+          <li>
+            Replace the starter homepage in{" "}
+            <code className="rounded-md border border-border bg-card px-1 py-0.5">
+              apps/web/src/routes/index.tsx
+            </code>
+            .
+          </li>
+        </ol>
+        <p className="mt-4 text-muted-foreground">
+          The testing setup is intentionally lightweight. For short-lived prototypes, it can be
+          safely ignored or removed.
+        </p>
+      </div>
+    </details>
+  );
+}
+
 function RepoStarsBadge({
   href,
   fallbackStarsCount,
@@ -268,21 +315,6 @@ function RepoStarsBadge({
       />
     </Button>
   );
-}
-
-function formatGitHubStars(count: number) {
-  if (count < 1000) {
-    return count.toLocaleString();
-  }
-
-  const compactValue = count / 1000;
-  const roundedValue =
-    compactValue >= 10 ? Math.round(compactValue) : Math.round(compactValue * 10) / 10;
-
-  return `${roundedValue.toLocaleString(undefined, {
-    maximumFractionDigits: compactValue >= 10 ? 0 : 1,
-    minimumFractionDigits: 0,
-  })}k`;
 }
 
 async function fetchRepoStars({ signal }: { signal: AbortSignal | undefined }) {

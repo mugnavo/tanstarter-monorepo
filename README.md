@@ -23,7 +23,7 @@ pnpm create mugnavo -t monorepo
 │    ├── auth                   # Better Auth
 │    ├── db                     # Drizzle ORM + Drizzle Kit + PostgreSQL
 │    └── ui                     # shadcn/ui primitives & utils
-├── tooling
+├── tools
 │    └── tsconfig               # Shared TypeScript configuration
 ├── vite.config.ts
 ├── LICENSE
@@ -37,6 +37,7 @@ pnpm create mugnavo -t monorepo
 - [Issue watchlist](#issue-watchlist)
 - [Goodies](#goodies)
   - [Git hooks](#git-hooks)
+  - [Testing](#testing)
   - [Scripts](#scripts)
   - [Utilities](#utilities)
 - [Ecosystem](#ecosystem)
@@ -99,7 +100,7 @@ Vite+ has support for [caching](https://viteplus.dev/guide/cache) via Vite Task.
 
 - [Router/Start issues](https://github.com/TanStack/router/issues) - TanStack Start is in RC.
 - [Devtools releases](https://github.com/TanStack/devtools/releases) - TanStack Devtools is in alpha and may still have breaking changes.
-- [Nitro v3 beta](https://nitro.build/blog/v3-beta) - This template is configured with Nitro v3 beta by default.
+- [Nitro v3 nightly](https://github.com/nitrojs/nitro/releases) - This template is configured with Nitro v3 nightly by default. Consider switching to v3 stable once it's released.
 - [Drizzle ORM v1 RC](https://orm.drizzle.team/docs/relations-v1-v2) - Drizzle ORM v1 is in RC with relations v2.
 - [Better Auth releases](https://github.com/better-auth/better-auth/releases) - We're using Better Auth v1.7 RC which supports Drizzle Relations v2.
 - [Vite+ releases](https://github.com/voidzero-dev/vite-plus/releases) - Vite+ is in beta.
@@ -123,6 +124,10 @@ Check the root [package.json](./package.json) and each workspace package's `pack
 
 - [`/auth/src/tanstack/middleware.ts`](./packages/auth/src/tanstack/middleware.ts) - Sample middleware for enforcing authentication on server functions & API routes.
 - [`/web/src/components/theme-toggle.tsx`](./apps/web/src/components/theme-toggle.tsx), [`/ui/lib/theme-provider.tsx`](./packages/ui/lib/theme-provider.tsx) - A theme toggle and provider for toggling between light and dark mode.
+
+#### Testing
+
+The [testing foundation](./.agents/testing.md) uses Vitest and Playwright and is intentionally lightweight. For short-lived prototypes, it can be safely ignored or removed.
 
 ## License
 
