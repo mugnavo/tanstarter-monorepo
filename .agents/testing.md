@@ -8,7 +8,7 @@ Tests are a fast validation layer for behavior that is difficult or risky to ver
 
 - Use Node-mode Vitest for pure domain rules, validation, authorization decisions, meaningful transformations, shared contracts, and regression-prone bug fixes.
 - Use a local integration test when multiple owned modules or a real disposable local dependency must cooperate. Isolate its data and never use remote or production databases.
-- Use Playwright for critical user journeys that unit tests cannot validate, such as auth entry points or payment completion.
+- Use Playwright for critical user journeys that unit tests cannot validate, such as auth entry points or multi-step onboarding.
 - Keep TanStack server functions thin. Extract deterministic domain or handler logic and test it directly instead of recreating the TanStack Start request context in unit tests.
 
 Usually do not test generated route discovery, routine navigation, static markup, shadcn primitives, trivial wrappers, implementation details, or framework behavior. Route tests are justified when custom search parsing, guards, redirects, or error behavior is itself product logic.
