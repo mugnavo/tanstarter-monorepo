@@ -3,14 +3,7 @@ import { expect, test } from "@playwright/test";
 const NON_LOCAL_HTTP_URL = /^https?:\/\/(?!(?:localhost|127\.0\.0\.1|\[::1\])(?::\d+)?(?:[/?#]|$))/;
 
 test.beforeEach(async ({ context }) => {
-  /**
-   * Leave local Vite module requests untouched so dependency optimization can settle normally.
-   * Vite 8.1 introduces experimental bundled dev mode, which may improve dev-server stability
-   * for E2E tests. We should consider adopting it once the feature is stable.
-   *
-   * @see https://vite.dev/blog/announcing-vite8-1#experimental-bundled-dev-mode
-   * @see https://github.com/vitejs/vite/discussions/22746
-   */
+  // Keep the starter smoke test isolated from third-party services.
   await context.route(NON_LOCAL_HTTP_URL, (route) => route.abort("blockedbyclient"));
 });
 
