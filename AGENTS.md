@@ -9,7 +9,7 @@
 - Don't run a standalone build after every little change. Use `vpr lint` as the baseline and run the narrowest relevant tests described in the testing guidelines; `vpr test:e2e` performs its own production build.
 - For running scripts, use `vpr`, which is a shorthand for `vp run`.
 
-# Code style
+## Code style
 
 - Do not introduce abstractions, generic utilities, or extensibility without a concrete need.
 - Avoid unnecessary indirection and wrapper layers that only rename or forward calls.
