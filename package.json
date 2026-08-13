@@ -9,6 +9,7 @@
     "dev:web": "vp run --filter=@repo/web dev",
     "lint": "vp lint --type-aware --type-check",
     "lint:fix": "vp lint --type-aware --type-check --fix",
+    "test": "vp test",
     "test:e2e": "vp run --recursive test:e2e",
     "format": "vp fmt",
     "format:check": "vp fmt --check",

@@ -11,8 +11,8 @@ Don't invoke a standalone build after every change. Use lint as the baseline and
 
 ## Testing
 
-- `vp test`: Run fast Node-mode Vitest tests once
-- `vp test watch`: Run Vitest in watch mode
+- `vpr test`: Run all Vitest unit and local integration tests once
+- `vpr test watch`: Run Vitest in watch mode
 - `vpr test:e2e`: Build each browser app and run its local Chromium end-to-end tests against the built server
 - `vp exec playwright install chromium`: Install the E2E browser once per machine
 

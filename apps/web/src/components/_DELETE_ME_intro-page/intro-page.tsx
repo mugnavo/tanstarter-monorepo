@@ -21,8 +21,8 @@ import { ThemeToggle } from "#/components/theme-toggle";
 import { formatGitHubStars } from "./format-github-stars";
 
 /**
- * This starter intro lives in a delete-me folder with its helper and unit test.
- * Have fun!
+ * This is the intro component for TanStarter, which you may delete after creating the project.
+ * Happy coding!
  */
 export function IntroPage() {
   const [isCopied, setIsCopied] = useState(false);
