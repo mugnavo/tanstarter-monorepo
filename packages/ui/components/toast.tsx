@@ -1,6 +1,4 @@
 import { Toast as ToastPrimitive } from "@base-ui/react/toast";
-import { Button } from "@repo/ui/components/button";
-import { cn } from "@repo/ui/lib/utils";
 import {
   XIcon,
   CircleCheckIcon,
@@ -10,6 +8,9 @@ import {
   Loader2Icon,
 } from "lucide-react";
 import * as React from "react";
+
+import { Button } from "#/components/button.tsx";
+import { cn } from "#/lib/utils.ts";
 
 const toast = ToastPrimitive.createToastManager();
 

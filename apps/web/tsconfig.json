@@ -2,12 +2,8 @@
   "extends": "@repo/tsconfig/base.json",
   "compilerOptions": {
     "types": ["node", "vite/client"],
+    "allowImportingTsExtensions": true,
     "paths": {
-      // See:
-      // https://github.com/mugnavo/tanstarter/pull/77
-      // https://github.com/mugnavo/tanstarter/pull/76
-      "#/*": ["./src/*"],
-
       // for shadcn CLI
       "@repo/ui/*": ["../../packages/ui/*"]
     }

@@ -15,8 +15,8 @@ import {
 import { Suspense } from "react";
 import { useState } from "react";
 
-import { SignOutButton } from "#/components/sign-out-button";
-import { ThemeToggle } from "#/components/theme-toggle";
+import { SignOutButton } from "#/components/sign-out-button.tsx";
+import { ThemeToggle } from "#/components/theme-toggle.tsx";
 
 import { formatGitHubStars } from "./format-github-stars";
 

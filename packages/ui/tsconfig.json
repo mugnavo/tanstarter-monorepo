@@ -1,9 +1,7 @@
 {
   "extends": "@repo/tsconfig/base.json",
   "compilerOptions": {
-    "paths": {
-      "@repo/ui/*": ["./*"]
-    }
+    "allowImportingTsExtensions": true
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

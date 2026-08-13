@@ -1,8 +1,8 @@
 import { Button } from "@repo/ui/components/button";
 import { createFileRoute, Link, Outlet } from "@tanstack/react-router";
 
-import { SignOutButton } from "#/components/sign-out-button";
-import { ThemeToggle } from "#/components/theme-toggle";
+import { SignOutButton } from "#/components/sign-out-button.tsx";
+import { ThemeToggle } from "#/components/theme-toggle.tsx";
 
 export const Route = createFileRoute("/_auth/app")({
   component: AppLayout,

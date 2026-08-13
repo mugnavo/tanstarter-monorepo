@@ -88,7 +88,7 @@ pnpm create mugnavo -t monorepo
 
 ## Deploying to production
 
-The [vite config](./apps/web/vite.config.ts#L48-L53) is configured to use Nitro by default, which supports many [deployment presets](https://nitro.build/deploy) like Netlify, Vercel, Node.js, and more.
+The [vite config](./apps/web/vite.config.ts#L45-L50) is configured to use Nitro by default, which supports many [deployment presets](https://nitro.build/deploy) like Netlify, Vercel, Node.js, and more.
 
 Refer to the [TanStack Start hosting docs](https://tanstack.com/start/latest/docs/framework/react/guide/hosting) for more information.
 

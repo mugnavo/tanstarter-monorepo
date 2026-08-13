@@ -8,7 +8,7 @@ import { useMutation } from "@tanstack/react-query";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { GalleryVerticalEndIcon, LoaderCircleIcon } from "lucide-react";
 
-import { SignInSocialButton } from "#/components/sign-in-social-button";
+import { SignInSocialButton } from "#/components/sign-in-social-button.tsx";
 
 export const Route = createFileRoute("/_guest/login")({
   component: LoginForm,
