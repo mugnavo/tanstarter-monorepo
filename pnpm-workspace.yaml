@@ -30,10 +30,10 @@ catalog:
   "@tanstack/react-form": 1.33.5
   "@tanstack/react-query": 5.101.4
   "@tanstack/react-query-devtools": 5.101.4
-  "@tanstack/react-router": 1.170.29
+  "@tanstack/react-router": 1.170.30
   "@tanstack/react-router-devtools": 1.167.1
   "@tanstack/react-router-ssr-query": 1.167.1
-  "@tanstack/react-start": 1.168.46
+  "@tanstack/react-start": 1.168.47
   "@types/babel__core": 7.20.5
   "@types/node": 26.2.0
   "@types/react": 19.2.18
@@ -47,10 +47,10 @@ catalog:
   date-fns: 4.4.0
   drizzle-kit: 1.0.0-rc.4
   drizzle-orm: 1.0.0-rc.4
-  lucide-react: 1.31.0
+  lucide-react: 1.32.0
   motion: 13.1.0
   nanoid: 6.0.1
-  nitro: npm:nitro-nightly@3.0.1-20260817-141030-4bfb35a7 # https://github.com/TanStack/router/issues/8031
+  nitro: npm:nitro-nightly@3.0.1-20260818-145128-83030ab5 # https://github.com/TanStack/router/issues/8031
   postgres: 3.4.9
   react: 19.2.8
   react-dom: 19.2.8

@@ -353,11 +353,6 @@ const CORE_BADGES: TechBadge[] = [
     src: "https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmugnavo%2Ftanstarter-monorepo%2Fmain%2Fpnpm-workspace.yaml&query=%24.catalog.react&label=react&style=flat-square",
   },
   {
-    alt: "React Compiler version",
-    href: "https://react.dev/learn/react-compiler",
-    src: "https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmugnavo%2Ftanstarter-monorepo%2Fmain%2Fpnpm-workspace.yaml&query=%24.catalog%5B%22babel-plugin-react-compiler%22%5D&label=react-compiler&style=flat-square",
-  },
-  {
     alt: "TanStack Start version",
     href: "https://tanstack.com/start/latest",
     src: "https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmugnavo%2Ftanstarter-monorepo%2Fmain%2Fpnpm-workspace.yaml&query=%24.catalog%5B%22%40tanstack%2Freact-start%22%5D&label=tanstack-start&style=flat-square",

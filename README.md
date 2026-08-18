@@ -8,13 +8,11 @@ A minimal monorepo starter for 🏝️ TanStack Start, based on [mugnavo/tanstar
 pnpm create mugnavo -t monorepo
 ```
 
-- [Vite Plus](https://viteplus.dev/) + pnpm workspaces with [catalogs](https://pnpm.io/catalogs)
-- [React 19](https://react.dev) + [React Compiler](https://react.dev/learn/react-compiler)
-- TanStack [Start](https://tanstack.com/start/latest) + [Router](https://tanstack.com/router/latest) + [Query](https://tanstack.com/query/latest) + [Form](https://tanstack.com/form/latest)
-- [Vite 8](https://vite.dev/) + [Nitro v3](https://nitro.build/)
+- [React](https://react.dev) + TanStack [Start](https://tanstack.com/start/latest) + [Router](https://tanstack.com/router/latest) + [Query](https://tanstack.com/query/latest)
 - [Tailwind CSS](https://tailwindcss.com/) + [shadcn/ui](https://ui.shadcn.com/) + [Base UI](https://base-ui.com/) (base-rhea, [`--preset b1au68YWO`](https://ui.shadcn.com/create?preset=b1au68YWO&base=base&template=start&pointer=true))
-- [Drizzle ORM v1](https://orm.drizzle.team/docs/relations-v1-v2) + PostgreSQL
+- [Drizzle ORM](https://orm.drizzle.team/) + PostgreSQL
 - [Better Auth](https://better-auth.com/)
+- [Vite Plus](https://viteplus.dev/) + [Nitro](https://nitro.build/)
 
 ```sh
 ├── apps
@@ -25,22 +23,10 @@ pnpm create mugnavo -t monorepo
 │    └── ui                     # shadcn/ui primitives & utils
 ├── tools
 │    └── tsconfig               # Shared TypeScript configuration
-├── vite.config.ts
-├── LICENSE
-└── README.md
+├── pnpm-workspace.yaml
+├── README.md
+└── vite.config.ts
 ```
-
-## Table of Contents
-
-- [Getting Started](#getting-started)
-- [Deploying to production](#deploying-to-production)
-- [Issue watchlist](#issue-watchlist)
-- [Goodies](#goodies)
-  - [Git hooks](#git-hooks)
-  - [Testing](#testing)
-  - [Scripts](#scripts)
-  - [Utilities](#utilities)
-- [Ecosystem](#ecosystem)
 
 ## Getting Started
 
