@@ -1,3 +1,4 @@
+import { SiGithub, SiGoogle } from "@icons-pack/react-simple-icons";
 import { authClient } from "@repo/auth/auth-client";
 import { Button } from "@repo/ui/components/button";
 import { toast } from "@repo/ui/components/toast";
@@ -10,7 +11,7 @@ interface SocialLoginButtonProps {
   callbackURL: string;
 }
 
-export function SignInSocialButton(props: SocialLoginButtonProps) {
+function SignInSocialButton(props: SocialLoginButtonProps) {
   const providerLabel =
     props.provider === "github"
       ? "GitHub"
@@ -36,14 +37,42 @@ export function SignInSocialButton(props: SocialLoginButtonProps) {
 
   return (
     <Button
-      variant="secondary"
+      variant="outline"
       className="w-full"
+      size="lg"
       type="button"
       disabled={mutation.isSuccess || mutation.isPending || props.disabled}
       onClick={() => mutation.mutate()}
     >
       {props.icon}
-      Login with {providerLabel}
+      Continue with {providerLabel}
     </Button>
+  );
+}
+
+export function SocialSignInButtons({
+  callbackURL,
+  disabled,
+}: Pick<SocialLoginButtonProps, "callbackURL" | "disabled">) {
+  return (
+    <>
+      <div className="relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:border-t after:border-border">
+        <span className="relative z-10 bg-background px-2 text-muted-foreground">Or</span>
+      </div>
+      <div className="grid gap-3 sm:grid-cols-2">
+        <SignInSocialButton
+          provider="github"
+          callbackURL={callbackURL}
+          disabled={disabled}
+          icon={<SiGithub className="size-4" />}
+        />
+        <SignInSocialButton
+          provider="google"
+          callbackURL={callbackURL}
+          disabled={disabled}
+          icon={<SiGoogle className="size-4" />}
+        />
+      </div>
+    </>
   );
 }
