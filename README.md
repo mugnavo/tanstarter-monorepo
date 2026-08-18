@@ -88,7 +88,7 @@ pnpm create mugnavo -t monorepo
 
 ## Deploying to production
 
-The [vite config](./apps/web/vite.config.ts#L45-L50) is configured to use Nitro by default, which supports many [deployment presets](https://nitro.build/deploy) like Netlify, Vercel, Node.js, and more.
+The [vite config](./apps/web/vite.config.ts) is configured to use Nitro by default, which supports many [deployment presets](https://nitro.build/deploy) like Netlify, Vercel, Node.js, and more.
 
 Refer to the [TanStack Start hosting docs](https://tanstack.com/start/latest/docs/framework/react/guide/hosting) for more information.
 
@@ -102,7 +102,6 @@ Vite+ has support for [caching](https://viteplus.dev/guide/cache) via Vite Task.
 - [Devtools releases](https://github.com/TanStack/devtools/releases) - TanStack Devtools is in alpha and may still have breaking changes.
 - [Nitro v3 nightly](https://github.com/nitrojs/nitro/releases) - This template is configured with Nitro v3 nightly by default. Consider switching to v3 stable once it's released.
 - [Drizzle ORM v1 RC](https://orm.drizzle.team/docs/relations-v1-v2) - Drizzle ORM v1 is in RC with relations v2.
-- [Better Auth releases](https://github.com/better-auth/better-auth/releases) - We're using Better Auth v1.7 RC which supports Drizzle Relations v2.
 - [Vite+ releases](https://github.com/voidzero-dev/vite-plus/releases) - Vite+ is in beta.
 
 ## Goodies

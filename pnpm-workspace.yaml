@@ -15,9 +15,9 @@ savePrefix: ""
 catalog:
   "@babel/core": 8.0.1
   "@base-ui/react": 1.7.0
-  "@better-auth/drizzle-adapter": 1.7.0-rc.6
+  "@better-auth/drizzle-adapter": 1.7.0
   "@fontsource-variable/inter": 5.3.0
-  "@icons-pack/react-simple-icons": 13.13.0
+  "@icons-pack/react-simple-icons": 13.15.1
   "@playwright/test": 1.62.1
   "@rolldown/plugin-babel": 0.2.3
   "@tailwindcss/vite": 4.3.3
@@ -40,7 +40,7 @@ catalog:
   "@types/react-dom": 19.2.4
   "@vitejs/plugin-react": 6.0.5
   babel-plugin-react-compiler: 1.0.0
-  better-auth: 1.7.0-rc.6
+  better-auth: 1.7.0
   class-variance-authority: 0.7.1
   cnfast: 0.1.0
   cross-env: 10.1.0
@@ -50,7 +50,7 @@ catalog:
   lucide-react: 1.31.0
   motion: 13.1.0
   nanoid: 6.0.1
-  nitro: npm:nitro-nightly@3.0.1-20260810-113911-16ff2809 # https://github.com/TanStack/router/issues/8031
+  nitro: npm:nitro-nightly@3.0.1-20260817-141030-4bfb35a7 # https://github.com/TanStack/router/issues/8031
   postgres: 3.4.9
   react: 19.2.8
   react-dom: 19.2.8
