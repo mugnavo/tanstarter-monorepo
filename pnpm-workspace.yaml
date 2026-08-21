@@ -21,24 +21,24 @@ catalog:
   "@playwright/test": 1.62.1
   "@rolldown/plugin-babel": 0.2.3
   "@tailwindcss/vite": 4.3.3
-  "@tanstack/devtools-a11y": 0.2.0
-  "@tanstack/devtools-vite": 0.8.3
+  "@tanstack/devtools-a11y": 0.2.2
+  "@tanstack/devtools-vite": 0.8.5
   "@tanstack/eslint-plugin-query": 5.101.4
   "@tanstack/eslint-plugin-router": 1.162.0
-  "@tanstack/react-devtools": 0.10.10
+  "@tanstack/react-devtools": 0.10.12
   "@tanstack/react-form-devtools": 0.2.34
   "@tanstack/react-form": 1.33.5
   "@tanstack/react-query": 5.101.4
   "@tanstack/react-query-devtools": 5.101.4
-  "@tanstack/react-router": 1.170.30
+  "@tanstack/react-router": 1.170.31
   "@tanstack/react-router-devtools": 1.167.1
   "@tanstack/react-router-ssr-query": 1.167.1
-  "@tanstack/react-start": 1.168.47
+  "@tanstack/react-start": 1.168.48
   "@types/babel__core": 7.20.5
   "@types/node": 26.2.0
   "@types/react": 19.2.18
   "@types/react-dom": 19.2.4
-  "@vitejs/plugin-react": 6.0.5
+  "@vitejs/plugin-react": 6.1.0
   babel-plugin-react-compiler: 1.0.0
   better-auth: 1.7.1
   class-variance-authority: 0.7.1
@@ -47,10 +47,10 @@ catalog:
   date-fns: 4.4.0
   drizzle-kit: 1.0.0-rc.4
   drizzle-orm: 1.0.0-rc.4
-  lucide-react: 1.32.0
-  motion: 13.1.0
+  lucide-react: 1.33.0
+  motion: 13.1.1
   nanoid: 6.0.1
-  nitro: npm:nitro-nightly@3.0.1-20260818-145128-83030ab5 # https://github.com/TanStack/router/issues/8031
+  nitro: npm:nitro-nightly@3.0.1-20260821-005124-e36e7a60 # https://github.com/TanStack/router/issues/8031
   postgres: 3.4.9
   react: 19.2.8
   react-dom: 19.2.8
