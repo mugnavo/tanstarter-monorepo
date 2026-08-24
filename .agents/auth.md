@@ -5,7 +5,7 @@
 - Better Auth config lives in `packages/auth/src/auth.ts`.
 - Auth utilities are centralized in `packages/auth/src/tanstack/*`.
 - In components, prefer shared auth hooks (`useAuth`, `useAuthSuspense`) from `packages/auth/src/tanstack/hooks.ts`. These reuse the same auth data as the route loader.
-- For route loaders under `_auth`, use `authQueryOptions` with the existing `context.queryClient`, similar to how the user is fetched in `_auth/route.tsx`.
+- When navigation-critical route logic under `_auth` needs auth data, read `authQueryOptions` through the existing `context.queryClient`, following `_auth/route.tsx`.
 
 ## Route Guards
 
