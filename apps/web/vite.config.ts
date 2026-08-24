@@ -47,6 +47,11 @@ export default defineConfig({
       // https://discord.com/channels/719702312431386674/1490005967067414608/1490634230458224751
       traceDeps: ["react", "react-dom"],
       /**
+       * FIXME: invalid ssr_exports from build, remove this once the Rolldown fix is out
+       * @see https://github.com/TanStack/router/issues/8031
+       */
+      inlineDynamicImports: true,
+      /**
        * TODO(security): Review production security headers before deployment.
        *
        * App-level policies such as CSP, Permissions-Policy, X-Frame-Options /

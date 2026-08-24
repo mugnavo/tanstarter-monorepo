@@ -46,7 +46,7 @@ catalog:
   lucide-react: 1.34.0
   motion: 13.1.1
   nanoid: 6.0.1
-  nitro: npm:nitro-nightly@3.0.1-20260821-005124-e36e7a60 # https://github.com/TanStack/router/issues/8031
+  nitro: 3.0.260610-beta
   postgres: 3.4.9
   react: 19.2.8
   react-dom: 19.2.8
