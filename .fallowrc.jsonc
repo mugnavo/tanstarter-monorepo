@@ -8,7 +8,7 @@
   "ignorePatterns": ["**/*.generated.ts", "**/*.d.ts", "**/*.gen.*"],
   "ignoreDependencies": [
     "@types/node",
-    "babel-plugin-react-compiler",
+    "oxc-transform-react",
     "@tanstack/eslint-plugin-query",
     "@tanstack/eslint-plugin-router",
     "vite-plus",

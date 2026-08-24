@@ -83,6 +83,9 @@ export default defineConfig({
       },
       { name: "vite-plus", specifier: "vite-plus/oxlint-plugin" },
     ],
+    categories: {
+      correctness: "warn",
+    },
     rules: {
       "vite-plus/prefer-vite-plus-imports": "warn",
 
@@ -91,10 +94,6 @@ export default defineConfig({
       "typescript/no-misused-spread": "off",
 
       "jsx-a11y/prefer-tag-over-role": "off",
-
-      // Experimental:
-      // https://oxc.rs/docs/guide/usage/linter/rules/react/react-compiler.html
-      "react/react-compiler": "warn",
 
       "eslint-tanstack-router/create-route-property-order": "warn",
 
