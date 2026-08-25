@@ -5,7 +5,7 @@
 - Stack: TypeScript + React (TanStack Start) in a pnpm + Vite+ monorepo, with Drizzle ORM, shadcn/ui, and Better Auth.
 - Prefer shared `@repo/ui` components; add primitives via shadcn CLI (`vpr ui add <component>`).
 - Use `lucide-react` for UI icons (use `Icon` suffix, e.g. `import { Loader2Icon } from "lucide-react"`); for brand icons use `@icons-pack/react-simple-icons` (e.g. `SiGithub`).
-- Use shared pnpm catalog versions (`pnpm-workspace.yaml`) via `catalog:`.
+- Keep UI copy user-centered: describe outcomes and next actions concisely without exposing providers, internal states, or implementation details.
 - Don't run a standalone build after every little change. Use `vpr lint` as the baseline and run the narrowest relevant tests described in the testing guidelines; `vpr test:e2e` performs its own production build.
 - For running scripts, use `vpr`, which is a shorthand for `vp run`.
 
