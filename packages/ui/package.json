@@ -19,7 +19,7 @@
     "@base-ui/react": "catalog:",
     "@icons-pack/react-simple-icons": "catalog:",
     "class-variance-authority": "catalog:",
-    "cnfast": "catalog:",
+    "cn": "catalog:",
     "date-fns": "catalog:",
     "lucide-react": "catalog:",
     "motion": "catalog:",
