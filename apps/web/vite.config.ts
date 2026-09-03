@@ -15,6 +15,7 @@ export default defineConfig({
       build: {
         // When deploying, use `vp run build` as the build command, not `vp build`
         command: "cross-env NODE_ENV=production vp build",
+        env: ["NITRO_PRESET"],
         input: [
           { auto: true },
           "!**/.output/**",
