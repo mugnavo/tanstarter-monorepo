@@ -4,10 +4,11 @@ import { db } from "@repo/db";
 import * as schema from "@repo/db/schema";
 import { betterAuth } from "better-auth/minimal";
 import { tanstackStartCookies } from "better-auth/tanstack-start";
+import { ENV } from "varlock/env";
 
 export const auth = betterAuth({
-  baseURL: process.env.VITE_BASE_URL,
-  secret: process.env.BETTER_AUTH_SECRET,
+  baseURL: ENV.VITE_BASE_URL,
+  secret: ENV.BETTER_AUTH_SECRET,
   telemetry: {
     enabled: false,
   },
@@ -29,14 +30,22 @@ export const auth = betterAuth({
 
   // https://better-auth.com/docs/concepts/oauth
   socialProviders: {
-    github: {
-      clientId: process.env.GITHUB_CLIENT_ID!,
-      clientSecret: process.env.GITHUB_CLIENT_SECRET!,
-    },
-    google: {
-      clientId: process.env.GOOGLE_CLIENT_ID!,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
-    },
+    ...(ENV.GITHUB_CLIENT_ID && ENV.GITHUB_CLIENT_SECRET
+      ? {
+          github: {
+            clientId: ENV.GITHUB_CLIENT_ID,
+            clientSecret: ENV.GITHUB_CLIENT_SECRET,
+          },
+        }
+      : {}),
+    ...(ENV.GOOGLE_CLIENT_ID && ENV.GOOGLE_CLIENT_SECRET
+      ? {
+          google: {
+            clientId: ENV.GOOGLE_CLIENT_ID,
+            clientSecret: ENV.GOOGLE_CLIENT_SECRET,
+          },
+        }
+      : {}),
   },
 
   // https://better-auth.com/docs/authentication/email-password

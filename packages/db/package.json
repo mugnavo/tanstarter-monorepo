@@ -8,13 +8,14 @@
     "./schema": "./src/schema/index.ts"
   },
   "scripts": {
-    "db": "drizzle-kit",
-    "auth:generate": "vpx auth@latest generate --config ../auth/src/auth.ts --y --output ./src/schema/auth.schema.ts"
+    "db": "varlock run --path ../../apps/web -- drizzle-kit",
+    "auth:generate": "varlock run --path ../../apps/web -- vpx auth@latest generate --config ../auth/src/auth.ts --y --output ./src/schema/auth.schema.ts"
   },
   "dependencies": {
     "drizzle-orm": "catalog:",
     "nanoid": "catalog:",
-    "postgres": "catalog:"
+    "postgres": "catalog:",
+    "varlock": "catalog:"
   },
   "devDependencies": {
     "@repo/tsconfig": "workspace:*",

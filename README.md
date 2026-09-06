@@ -44,7 +44,11 @@ pnpm create mugnavo -t monorepo
    pnpm create mugnavo -t monorepo
    ```
 
-2. Create a `.env` file in `/apps/web` based on [`.env.example`](./apps/web/.env.example).
+2. Create a `.env.local` file in `apps/web/` with your values, based on [`.env.schema`](./apps/web/.env.schema), then validate them:
+
+   ```sh
+   vpr env:load
+   ```
 
 3. Generate the initial migration with drizzle-kit, then apply to your database:
 
@@ -71,6 +75,14 @@ pnpm create mugnavo -t monorepo
 > # or
 > ./dev.sh web # runs "vp run --filter=@repo/web dev"
 > ```
+
+## Environment variables
+
+[Varlock](https://varlock.dev/) keeps the environment-variable contract in `apps/web/.env.schema` and generates types from it. Put local values, including secrets, in the uncommitted `apps/web/.env.local`, then run `vpr env:load` to validate them.
+
+In application code, `import { ENV } from "varlock/env"` instead of reading `process.env` directly.
+
+When adding another runnable app (e.g. a separate Hono server), provide it with its own schema and local env file. Keep environment ownership with the runnable app rather than its shared packages.
 
 ## Deploying to production
 

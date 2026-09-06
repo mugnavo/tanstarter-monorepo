@@ -15,7 +15,10 @@
     "format:check": "vp fmt --check",
     "check": "vp check",
     "check:fix": "vp check --fix",
-    "prepare": "vp config",
+    "env:audit": "cd apps/web && varlock audit . ../../packages/auth ../../packages/db",
+    "env:load": "varlock load --path apps/web",
+    "env:codegen": "varlock codegen --path apps/web",
+    "prepare": "vp config && vp run env:codegen",
     "deps": "vpx taze@latest -Ilwr --maturity-period 3",
     "fallow": "vpx fallow@latest --skip health",
     "tanstack": "vpx @tanstack/cli@latest",
@@ -30,6 +33,7 @@
   "devDependencies": {
     "@tanstack/eslint-plugin-query": "catalog:",
     "@tanstack/eslint-plugin-router": "catalog:",
+    "varlock": "catalog:",
     "vite-plus": "catalog:"
   },
   "engines": {

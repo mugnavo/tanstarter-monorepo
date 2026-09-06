@@ -1,4 +1,5 @@
 import { createAuthClient } from "better-auth/react";
+import { ENV } from "varlock/env";
 
 /**
  * https://better-auth.com/docs/concepts/client
@@ -9,5 +10,5 @@ import { createAuthClient } from "better-auth/react";
  * For server/SSR operations, prefer `auth.api` instead, and wrap in a serverFn if needed.
  */
 export const authClient = createAuthClient({
-  baseURL: (import.meta as any).env.VITE_BASE_URL || process.env.VITE_BASE_URL,
+  baseURL: ENV.VITE_BASE_URL,
 });

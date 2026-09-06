@@ -8,8 +8,8 @@
   "scripts": {
     "dev": "vp dev",
     "preview": "vp preview",
-    "start": "node --env-file-if-exists=.env .output/server/index.mjs",
-    "start:e2e": "node --env-file-if-exists=.env.e2e .output/server/index.mjs",
+    "start": "varlock run -- node .output/server/index.mjs",
+    "start:e2e": "varlock run -- node .output/server/index.mjs",
     "test:e2e": "playwright test --pass-with-no-tests",
     "ui": "vpx shadcn@latest"
   },
@@ -24,6 +24,7 @@
     "@tanstack/react-router": "catalog:",
     "@tanstack/react-router-ssr-query": "catalog:",
     "@tanstack/react-start": "catalog:",
+    "@varlock/vite-integration": "catalog:",
     "date-fns": "catalog:",
     "drizzle-orm": "catalog:",
     "lucide-react": "catalog:",
@@ -31,6 +32,7 @@
     "nanoid": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
+    "varlock": "catalog:",
     "zod": "catalog:"
   },
   "devDependencies": {
