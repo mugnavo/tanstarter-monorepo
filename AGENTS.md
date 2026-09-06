@@ -11,6 +11,7 @@
 
 ## Environment variables
 
+- Treat each app's `.env.schema` as the environment-variable source of truth. In application code, import `ENV` from `varlock/env` instead of reading `process.env` directly.
 - Each runnable app owns its `.env.schema` and `.env.local`; for example, the TanStack Start web app's files are in `apps/web`. Local values are never committed or read by agents. Update the schema first, then ask the developer to add any local or secret values.
 - Validate changes with `vp exec varlock load --agent --path <app>`; this safely redacts sensitive values. `env.d.ts` is generated from the schema and ignored by Git.
 - Shared implementation packages consume the owning app's generated environment types rather than owning package schemas.
