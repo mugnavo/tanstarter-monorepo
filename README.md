@@ -12,6 +12,7 @@ pnpm create mugnavo -t monorepo
 - [Tailwind CSS](https://tailwindcss.com/) + [shadcn/ui](https://ui.shadcn.com/) + [Base UI](https://base-ui.com/) (base-rhea, [`--preset b1au68YWO`](https://ui.shadcn.com/create?preset=b1au68YWO&base=base&template=start&pointer=true))
 - [Drizzle ORM](https://orm.drizzle.team/) + PostgreSQL
 - [Better Auth](https://better-auth.com/)
+- [Varlock](https://varlock.dev/)
 - [Vite Plus](https://viteplus.dev/) + [Nitro](https://nitro.build/)
 
 ```sh
@@ -44,7 +45,11 @@ pnpm create mugnavo -t monorepo
    pnpm create mugnavo -t monorepo
    ```
 
-2. Create a `.env` file in `/apps/web` based on [`.env.example`](./apps/web/.env.example).
+2. Add your local values to `apps/web/.env.local`, using [`.env.schema`](./apps/web/.env.schema) as the source of truth, then validate them:
+
+   ```sh
+   vpr env:validate
+   ```
 
 3. Generate the initial migration with drizzle-kit, then apply to your database:
 
@@ -71,6 +76,10 @@ pnpm create mugnavo -t monorepo
 > # or
 > ./dev.sh web # runs "vp run --filter=@repo/web dev"
 > ```
+
+## Environment variables
+
+Varlock validates typed environment variables from `apps/web/.env.schema`; keep local values in the uncommitted `apps/web/.env.local`. A future runnable app (e.g. a separate Hono server) may own its own schema and `.env.local`.
 
 ## Deploying to production
 

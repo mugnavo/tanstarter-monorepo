@@ -1,9 +1,5 @@
-import { loadEnvFile } from "node:process";
-
 import type { Config } from "drizzle-kit";
-
-// Load .env from /apps/web
-loadEnvFile("../../apps/web/.env");
+import { ENV } from "varlock/env";
 
 export default {
   out: "./migrations",
@@ -14,6 +10,6 @@ export default {
 
   dialect: "postgresql",
   dbCredentials: {
-    url: process.env.DATABASE_URL as string,
+    url: ENV.DATABASE_URL,
   },
 } satisfies Config;

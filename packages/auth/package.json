@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "@better-auth/drizzle-adapter": "catalog:",
-    "better-auth": "catalog:"
+    "better-auth": "catalog:",
+    "varlock": "catalog:"
   },
   "devDependencies": {
     "@repo/tsconfig": "workspace:*",

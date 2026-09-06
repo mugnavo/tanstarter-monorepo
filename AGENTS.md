@@ -9,6 +9,13 @@
 - Don't run a standalone build after every little change. Use `vpr lint` as the baseline and run the narrowest relevant tests described in the testing guidelines; `vpr test:e2e` performs its own production build.
 - For running scripts, use `vpr`, which is a shorthand for `vp run`.
 
+## Environment variables
+
+- `apps/web/.env.local` holds local values and is never committed or read by agents. Update the schema first, then ask the developer to add any local or secret values.
+- Validate changes with `vp exec varlock load --agent --path apps/web`; this safely redacts sensitive values. `env.d.ts` is generated from the schema and ignored by Git.
+- The `web` app currently owns all environment variables, including those consumed by its auth and database implementation packages. Keep their code typed through the generated `apps/web/env.d.ts` rather than adding package schemas.
+- When adding another runnable app that owns environment variables, give it its own `.env.schema` and `.env.local`. Introduce a root schema only for variables genuinely shared across runnable apps, importing it explicitly from each app schema.
+
 ## Code style
 
 - Do not introduce abstractions, generic utilities, or extensibility without a concrete need.

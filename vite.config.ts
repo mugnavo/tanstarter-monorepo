@@ -55,6 +55,8 @@ export default defineConfig({
       ".wrangler",
       ".netlify",
       "dist",
+      ".agents/skills/",
+      "env.d.ts",
     ],
   },
 
@@ -114,6 +116,8 @@ export default defineConfig({
       "build/",
       "worker-configuration.d.ts",
       "scripts/",
+      ".agents/skills/",
+      "env.d.ts",
     ],
   },
 });
