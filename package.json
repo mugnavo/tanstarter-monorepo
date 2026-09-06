@@ -16,7 +16,7 @@
     "check": "vp check",
     "check:fix": "vp check --fix",
     "env:audit": "cd apps/web && varlock audit . ../../packages/auth ../../packages/db",
-    "env:validate": "varlock load --path apps/web",
+    "env:load": "varlock load --path apps/web",
     "env:codegen": "varlock codegen --path apps/web",
     "prepare": "vp config && vp run env:codegen",
     "deps": "vpx taze@latest -Ilwr --maturity-period 3",

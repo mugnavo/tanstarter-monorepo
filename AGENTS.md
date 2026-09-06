@@ -11,10 +11,9 @@
 
 ## Environment variables
 
-- `apps/web/.env.local` holds local values and is never committed or read by agents. Update the schema first, then ask the developer to add any local or secret values.
-- Validate changes with `vp exec varlock load --agent --path apps/web`; this safely redacts sensitive values. `env.d.ts` is generated from the schema and ignored by Git.
-- The `web` app currently owns all environment variables, including those consumed by its auth and database implementation packages. Keep their code typed through the generated `apps/web/env.d.ts` rather than adding package schemas.
-- When adding another runnable app that owns environment variables, give it its own `.env.schema` and `.env.local`. Introduce a root schema only for variables genuinely shared across runnable apps, importing it explicitly from each app schema.
+- Each runnable app owns its `.env.schema` and `.env.local`; for example, the TanStack Start web app's files are in `apps/web`. Local values are never committed or read by agents. Update the schema first, then ask the developer to add any local or secret values.
+- Validate changes with `vp exec varlock load --agent --path <app>`; this safely redacts sensitive values. `env.d.ts` is generated from the schema and ignored by Git.
+- Shared implementation packages consume the owning app's generated environment types rather than owning package schemas.
 
 ## Code style
 
