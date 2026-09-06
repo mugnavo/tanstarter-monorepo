@@ -43,7 +43,10 @@ export default defineConfig({
       consolePiping: { enabled: false },
     }),
     // https://varlock.dev/integrations/tanstack-start/
-    varlockVitePlugin(),
+    varlockVitePlugin({
+      // https://varlock.dev/integrations/vite/#ssr-code-injection
+      ssrInjectMode: "resolved-env",
+    }),
     tanstackStart(),
     // https://tanstack.com/start/latest/docs/framework/react/guide/hosting
     nitro({
