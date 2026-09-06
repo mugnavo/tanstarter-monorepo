@@ -78,7 +78,7 @@ pnpm create mugnavo -t monorepo
 
 ## Environment variables
 
-Varlock keeps the environment-variable contract in `apps/web/.env.schema` and generates types from it. Put local values, including secrets, in the uncommitted `apps/web/.env.local`, then run `vpr env:load` to validate them.
+[Varlock](https://varlock.dev/) keeps the environment-variable contract in `apps/web/.env.schema` and generates types from it. Put local values, including secrets, in the uncommitted `apps/web/.env.local`, then run `vpr env:load` to validate them.
 
 In application code, `import { ENV } from "varlock/env"` instead of reading `process.env` directly.
 
